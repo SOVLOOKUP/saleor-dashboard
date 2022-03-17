@@ -5606,6 +5606,8 @@ export type ProductVariantFragment = { __typename: 'ProductVariant', id: string,
 
 export type ExportFileFragment = { __typename: 'ExportFile', id: string, status: JobStatusEnum, url: string | null };
 
+export type ProductListAttributeFragment = { __typename: 'SelectedAttribute', attribute: { __typename: 'Attribute', id: string }, values: Array<{ __typename: 'AttributeValue', id: string, name: string | null, slug: string | null, reference: string | null, boolean: boolean | null, date: any | null, dateTime: any | null, value: string | null, file: { __typename: 'File', url: string, contentType: string | null } | null } | null> };
+
 export type ShippingZoneFragment = { __typename: 'ShippingZone', id: string, name: string, description: string | null, countries: Array<{ __typename: 'CountryDisplay', code: string, country: string } | null> | null, metadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null>, privateMetadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null> };
 
 export type ShippingMethodWithPostalCodesFragment = { __typename: 'ShippingMethodType', id: string, postalCodeRules: Array<{ __typename: 'ShippingMethodPostalCodeRule', id: string, inclusionType: PostalCodeRuleInclusionTypeEnum | null, start: string | null, end: string | null } | null> | null };
