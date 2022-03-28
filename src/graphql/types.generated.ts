@@ -6311,6 +6311,7 @@ export type PageListQueryVariables = Exact<{
   last?: InputMaybe<Scalars['Int']>;
   before?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<PageSortingInput>;
+  filter?: InputMaybe<PageFilterInput>;
 }>;
 
 

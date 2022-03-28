@@ -9906,8 +9906,15 @@ export type PageBulkRemoveMutationHookResult = ReturnType<typeof usePageBulkRemo
 export type PageBulkRemoveMutationResult = Apollo.MutationResult<Types.PageBulkRemoveMutation>;
 export type PageBulkRemoveMutationOptions = Apollo.BaseMutationOptions<Types.PageBulkRemoveMutation, Types.PageBulkRemoveMutationVariables>;
 export const PageListDocument = gql`
-    query PageList($first: Int, $after: String, $last: Int, $before: String, $sort: PageSortingInput) {
-  pages(before: $before, after: $after, first: $first, last: $last, sortBy: $sort) {
+    query PageList($first: Int, $after: String, $last: Int, $before: String, $sort: PageSortingInput, $filter: PageFilterInput) {
+  pages(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sortBy: $sort
+    filter: $filter
+  ) {
     edges {
       node {
         ...Page
@@ -9940,6 +9947,7 @@ export const PageListDocument = gql`
  *      last: // value for 'last'
  *      before: // value for 'before'
  *      sort: // value for 'sort'
+ *      filter: // value for 'filter'
  *   },
  * });
  */
