@@ -23,7 +23,7 @@ import { useStyles } from "./styles";
 export interface WebhooksListProps {
   webhooks: AppQuery["app"]["webhooks"];
   onRemove: (id: string) => void;
-  getRowHref: (id: string) => void;
+  getRowHref: (id: string) => string;
   onCreate?: () => void;
 }
 
@@ -85,7 +85,7 @@ const WebhooksList: React.FC<WebhooksListProps> = ({
               <TableRowLink
                 hover={!!webhook}
                 className={!!webhook ? classes.tableRow : undefined}
-                href={getRowHref(webhook.id)}
+                href={webhook && getRowHref(webhook.id)}
                 key={webhook ? webhook.id : "skeleton"}
               >
                 <TableCell

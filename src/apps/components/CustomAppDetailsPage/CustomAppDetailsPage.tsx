@@ -54,7 +54,7 @@ export interface CustomAppDetailsPageProps {
   ) => SubmitPromise<AppErrorFragment[]>;
   onWebhookCreate: () => void;
   onWebhookRemove: (id: string) => void;
-  getWebhookUrl: (id: string) => void;
+  getWebhookUrl: (id: string) => string;
   onAppActivateOpen: () => void;
   onAppDeactivateOpen: () => void;
 }
